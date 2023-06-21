@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         logInButton.layer.cornerRadius = 10
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -29,11 +30,10 @@ class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     super .touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
 
     @IBAction func LogInButtonPressed() {
-//        guard let text = userNameTF.text, !text.isEmpty else { return }
-//        guard let textPass = passwordTF.text, !textPass.isEmpty else { return }
         if userNameTF.text != userName || passwordTF.text != password {
             showAlert(with: "Oops! 🫥", and: "Uncorrect UserName or Password")
         }
@@ -61,4 +61,26 @@ extension ViewController {
         present(alert, animated: true)
     }
 }
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == userNameTF {
+            passwordTF.becomeFirstResponder()
+        } else if textField == passwordTF {
+            LogInButtonPressed()
+        }
+        return true
+    }
+}z
 
+// Осталось реализовать логику клавиатуры
+
+/*
+ // IB Outlets
+ // Public Properties
+ // Private Properties
+ // Initializers
+ // Override Methods
+ // IB Actions
+ // Public Methods
+ // Private Methods
+ */
