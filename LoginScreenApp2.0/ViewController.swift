@@ -20,18 +20,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         logInButton.layer.cornerRadius = 10
-        
+       
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.welcomeLabelHello = userNameTF.text
+        welcomeVC.welcomeLabelHello = userName
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    super .touchesBegan(touches, with: event)
-        view.endEditing(true)
-    }
 
     @IBAction func LogInButtonPressed() {
         if userNameTF.text != userName || passwordTF.text != password {
@@ -39,11 +35,10 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func forgetUserNameButtonPressed() {
-        showAlert(with: "Упс!🥴", and: "Your UserName is '\(userName)'")
-    }
-    @IBAction func forgetPassButtonPressed() {
-        showAlert(with: "Упс!🥴", and: "Your Pass is '\(password)'")
+    @IBAction func forgetUserDataPessed(_ sender: UIButton) {
+        sender.tag == 0
+        ? showAlert(with: "Упс!🥴", and: "Your UserName is '\(userName)'")
+        : showAlert(with: "Упс!🥴", and: "Your Pass is '\(password)'")
     }
     
     @IBAction func uwnind(for segue: UIStoryboardSegue) {
@@ -62,25 +57,18 @@ extension ViewController {
     }
 }
 extension ViewController: UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == userNameTF {
             passwordTF.becomeFirstResponder()
-        } else if textField == passwordTF {
+        } else {
             LogInButtonPressed()
+            performSegue(withIdentifier: "welcomeViewController", sender: nil)
         }
         return true
     }
-}z
-
-// Осталось реализовать логику клавиатуры
-
-/*
- // IB Outlets
- // Public Properties
- // Private Properties
- // Initializers
- // Override Methods
- // IB Actions
- // Public Methods
- // Private Methods
- */
+}

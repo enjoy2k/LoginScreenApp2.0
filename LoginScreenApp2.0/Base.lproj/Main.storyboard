@@ -24,7 +24,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                         <connections>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="M6C-d7-5Sr"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="a9v-c2-tFM"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FE2-tX-Dn0">
@@ -32,7 +32,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                         <connections>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="F5Y-WI-zFP"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Abk-da-gFr"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -49,7 +49,7 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="LogInButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="cVn-rz-rSa"/>
-                                            <segue destination="qPz-wN-75L" kind="presentation" modalPresentationStyle="fullScreen" id="CeY-B2-TlW"/>
+                                            <segue destination="qPz-wN-75L" kind="presentation" identifier="welcomeViewController" modalPresentationStyle="fullScreen" id="CeY-B2-TlW"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="nyK-jQ-ZVy">
@@ -69,10 +69,10 @@
                                                     </attributedString>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="forgetUserNameButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fsv-47-KZ6"/>
+                                                    <action selector="forgetUserDataPessed" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fsv-47-KZ6"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9z-gF-znW">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9z-gF-znW">
                                                 <rect key="frame" x="115.5" y="0.0" width="103.5" height="76.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain">
@@ -87,7 +87,7 @@
                                                     </attributedString>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="forgetPassButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="XX0-Yt-4Um"/>
+                                                    <action selector="forgetUserDataPessed" destination="BYZ-38-t0r" eventType="touchUpInside" id="SPb-nT-NIz"/>
                                                 </connections>
                                             </button>
                                         </subviews>
